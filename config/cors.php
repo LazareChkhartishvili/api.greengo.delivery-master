@@ -19,11 +19,12 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // 'allowed_origins' => ['*'],
-  'allowed_origins' => [
-    'http://localhost:3000',
-    'https://*.vercel.app',  
-],
+    'allowed_origins' => ['*'],
+  // 'allowed_origins' => [
+  //   'http://localhost:3000',
+  //   'https://greengodelivery-ge-main-deeobv1cz-lazares-projects-465f935a.vercel.app',
+  //   'https://*.vercel.app',
+  // ],
 
     'allowed_origins_patterns' => [],
 
