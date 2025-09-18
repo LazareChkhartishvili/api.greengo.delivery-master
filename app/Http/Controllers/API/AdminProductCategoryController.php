@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Controllers\API\StafiloController as StafiloController;
