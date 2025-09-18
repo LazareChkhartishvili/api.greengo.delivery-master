@@ -25,6 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'manager' => App\Http\Middleware\ManagerMiddleware::class,
             'company' => App\Http\Middleware\CompanyMiddleware::class,
             'member' => App\Http\Middleware\MemberMiddleware::class,
+            'cors' => App\Http\Middleware\CorsMiddleware::class,
         ]);
         
         // Add CORS middleware globally to API routes
