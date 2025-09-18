@@ -21,7 +21,7 @@ class WebHomeController extends StafiloController
 
     public function categoryList(Request $request)
     {
-        $Categorys = Category::where('status', true)->orderBy('sort', 'asc')->get();
+        $Categorys = Category::where('status', 1)->orderBy('sort', 'asc')->get();
 
         $response = $this->sendResponse(WebCategoryResource::collection($Categorys), '200');
         return $response->header('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -36,7 +36,7 @@ class WebHomeController extends StafiloController
 
     public function companyList(Request $request)
     {
-        $Companys = Company::where('status', true)->inRandomOrder()->take(10)->orderBy('sort', 'desc')->get();
+        $Companys = Company::where('status', 1)->inRandomOrder()->take(10)->orderBy('sort', 'desc')->get();
 
         return $this->sendResponse(WebCompanyResource::collection($Companys), '200');
     }
@@ -46,7 +46,7 @@ class WebHomeController extends StafiloController
         $limit = (int)($request->input('limit', 20));
         $limit = max(1, min($limit, 100));
 
-        $Products = Product::where('status', true)
+        $Products = Product::where('status', 1)
             ->orderByDesc('id')
             ->take($limit)
             ->get([
