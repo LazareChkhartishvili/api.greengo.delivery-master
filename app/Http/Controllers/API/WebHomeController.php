@@ -23,7 +23,8 @@ class WebHomeController extends StafiloController
     {
         $Categorys = Category::where('status', true)->orderBy('sort', 'asc')->get();
 
-        return $this->sendResponse(WebCategoryResource::collection($Categorys), '200');
+        $response = $this->sendResponse(WebCategoryResource::collection($Categorys), '200');
+        return $response->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     public function cityList(Request $request)
