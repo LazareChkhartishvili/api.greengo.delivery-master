@@ -21,7 +21,7 @@ class WebProductResource extends JsonResource
         if (!empty($pictureRaw)) {
             $picture = (Str::startsWith($pictureRaw, ['http://', 'https://']))
                 ? $pictureRaw
-                : "https://api.greengo.delivery".$pictureRaw;
+                : config('app.url').$pictureRaw;
         }
 
         return [
