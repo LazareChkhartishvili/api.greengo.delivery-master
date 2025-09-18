@@ -19,7 +19,7 @@ class WebCategoryController extends StafiloController
         }
 
         $Companys = Company::where('category_id', $Category->id)
-            ->where('status', 1)
+            ->where('status', true)
             ->orderBy('sort', 'asc')
             ->get();
 
