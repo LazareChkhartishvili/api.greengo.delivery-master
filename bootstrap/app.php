@@ -9,6 +9,7 @@ use App\Http\Middleware\CourierMiddleware;
 use App\Http\Middleware\ManagerMiddleware;
 use App\Http\Middleware\CompanyMiddleware;
 use App\Http\Middleware\MemberMiddleware;
+use App\Http\Middleware\CorsMiddleware;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -24,6 +25,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'manager' => App\Http\Middleware\ManagerMiddleware::class,
             'company' => App\Http\Middleware\CompanyMiddleware::class,
             'member' => App\Http\Middleware\MemberMiddleware::class,
+        ]);
+        
+        // Add CORS middleware globally to API routes
+        $middleware->api(prepend: [
+            \App\Http\Middleware\CorsMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
