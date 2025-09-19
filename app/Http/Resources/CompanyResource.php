@@ -31,7 +31,7 @@ class CompanyResource extends JsonResource
             'soc_facebook'              => $this->soc_facebook,
             'soc_instagram'             => $this->soc_instagram,
             'soc_youtobe'               => $this->soc_youtobe,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'show_count'                => $this->show_count,
             'status'                    => $this->status,
         ];

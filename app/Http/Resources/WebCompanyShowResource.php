@@ -42,7 +42,7 @@ class WebCompanyShowResource extends JsonResource
             'soc_facebook'              => $this->soc_facebook,
             'soc_instagram'             => $this->soc_instagram,
             'soc_youtobe'               => $this->soc_youtobe,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'product_category'          => WebProductCategoryResource::collection($ProductCategorys),
             // 'products'                  => WebProductResource::collection($Products),
             'show_count'                => $this->show_count,

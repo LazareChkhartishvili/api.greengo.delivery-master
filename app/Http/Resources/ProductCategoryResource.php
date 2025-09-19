@@ -21,7 +21,7 @@ class ProductCategoryResource extends JsonResource
             'name_en'                   => $this->name_en,
             'description_ka'            => $this->description_ka,
             'description_en'            => $this->description_en,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'icon'                      => $this->icon,
             'show_count'                => $this->show_count,
             'status'                    => $this->status,

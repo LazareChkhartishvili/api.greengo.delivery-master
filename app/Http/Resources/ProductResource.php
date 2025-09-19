@@ -22,7 +22,7 @@ class ProductResource extends JsonResource
             'name_en'                   => $this->name_en,
             'description_ka'            => $this->description_ka,
             'description_en'            => $this->description_en,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'old_price'                 => $this->old_price,
             'price'                     => $this->price,
             'show_count'                => $this->show_count,

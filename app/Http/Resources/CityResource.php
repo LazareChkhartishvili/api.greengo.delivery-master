@@ -18,7 +18,7 @@ class CityResource extends JsonResource
             'id'                        => $this->id,
             'name_ka'                   => $this->name_ka,
             'name_en'                   => $this->name_en,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'show_count'                => $this->show_count,
             'status'                    => $this->status,
         ];

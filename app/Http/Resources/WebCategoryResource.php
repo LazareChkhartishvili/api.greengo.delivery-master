@@ -20,7 +20,7 @@ class WebCategoryResource extends JsonResource
             'name_en'                   => $this->name_en,
             'description_ka'            => $this->description_ka,
             'description_en'            => $this->description_en,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'svg'                       => $this->svg,
             'show_count'                => $this->show_count,
         ];

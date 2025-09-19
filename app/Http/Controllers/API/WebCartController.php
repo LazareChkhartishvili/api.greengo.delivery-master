@@ -38,9 +38,6 @@ class WebCartController extends StafiloController
         $items = $cart->items->map(function (CartItem $item) {
             $p = $item->product;
             $picture = $p?->picture;
-            if (!empty($picture) && !str_starts_with($picture, 'http')) {
-                $picture = "https://api.greengo.delivery".$picture;
-            }
             return [
                 'id' => $item->id,
                 'product_id' => $item->product_id,

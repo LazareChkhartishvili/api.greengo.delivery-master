@@ -18,7 +18,7 @@ class WebCityResource extends JsonResource
             'slug'                      => $this->slug,
             'name_ka'                   => $this->name_ka,
             'name_en'                   => $this->name_en,
-            'picture'                   => "https://api.greengo.delivery".$this->picture,
+            'picture'                   => $this->picture,
             'show_count'                => $this->show_count,
         ];
     }
