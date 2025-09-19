@@ -20,7 +20,12 @@ services:
         value: database
       - key: PORT
         value: 80
-    
+      # Database connection will be set via DATABASE_URL from connected PostgreSQL service
+      - key: DATABASE_URL
+        fromDatabase:
+          name: greengo-db
+          property: connectionString
+
 databases:
   - name: greengo-db
     plan: free

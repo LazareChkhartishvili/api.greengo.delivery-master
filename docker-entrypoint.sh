@@ -15,9 +15,9 @@ echo "DB_DATABASE=$DB_DATABASE"
 echo "DB_USERNAME=$DB_USERNAME"
 echo "====================================="
 
-# If DATABASE_URL exists, parse it and set individual variables
-if [ ! -z "$DATABASE_URL" ]; then
-    echo "Parsing DATABASE_URL..."
+# Check if DATABASE_URL is properly set (not a template)
+if [ ! -z "$DATABASE_URL" ] && [[ "$DATABASE_URL" != *"\${{DATABASE_URL}}"* ]]; then
+    echo "Valid DATABASE_URL found, parsing..."
     # Extract components from DATABASE_URL
     export DB_CONNECTION=pgsql
     export DB_HOST=$(echo $DATABASE_URL | sed 's/.*@\([^:]*\):.*/\1/')
@@ -31,6 +31,21 @@ if [ ! -z "$DATABASE_URL" ]; then
     echo "DB_PORT=$DB_PORT"
     echo "DB_DATABASE=$DB_DATABASE"
     echo "DB_USERNAME=$DB_USERNAME"
+elif [[ "$DATABASE_URL" == *"\${{DATABASE_URL}}"* ]]; then
+    echo "ERROR: DATABASE_URL template not substituted by Render!"
+    echo "This means PostgreSQL database is not properly connected to the service."
+    echo "Please check Render Dashboard:"
+    echo "1. Create a PostgreSQL database"
+    echo "2. Connect it to your web service"
+    echo "3. Verify DATABASE_URL environment variable is set"
+    exit 1
+else
+    echo "No DATABASE_URL found, using individual DB variables..."
+    if [ -z "$DB_HOST" ] && [ -z "$PGHOST" ]; then
+        echo "ERROR: No database connection variables found!"
+        echo "Please set either DATABASE_URL or individual DB_* variables"
+        exit 1
+    fi
 fi
 
 # Wait for database to be ready
