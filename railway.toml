@@ -8,3 +8,4 @@ restartPolicyMaxRetries = 10
 
 [variables]
 PORT = "8080"
+DB_CONNECTION = "pgsql"
