@@ -22,7 +22,7 @@ return [
     'allowed_origins' => [
       'http://localhost:3000',
       'https://greengodelivery-ge-main.vercel.app',
-      'https://apigreengodelivery-master-production.up.railway.app',
+      'https://greengo-api-production.up.railway.app',
     ],
 
     'allowed_origins_patterns' => [
