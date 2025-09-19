@@ -1,8 +1,8 @@
 [build]
-builder = "nixpacks"
+builder = "dockerfile"
 
 [deploy]
-startCommand = "unset DATABASE_URL && echo 'PGHOST='$PGHOST && echo 'PGPORT='$PGPORT && echo 'PGDATABASE='$PGDATABASE && echo 'PGUSER='$PGUSER && php artisan config:cache && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"
+# Docker container uses its own entrypoint script
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
 

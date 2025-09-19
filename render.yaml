@@ -1,9 +1,8 @@
 services:
   - type: web
     name: greengo-api
-    env: php
-    buildCommand: "./render-build.sh"
-    startCommand: "./render-start.sh"
+    env: docker
+    dockerfilePath: ./Dockerfile
     plan: free
     healthCheckPath: /
     envVars:
@@ -19,7 +18,9 @@ services:
         value: database
       - key: CACHE_DRIVER
         value: database
-
+      - key: PORT
+        value: 80
+    
 databases:
   - name: greengo-db
     plan: free

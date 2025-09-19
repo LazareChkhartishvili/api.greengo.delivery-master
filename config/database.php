@@ -81,11 +81,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('PGHOST', '127.0.0.1'),
-            'port' => env('PGPORT', '5432'),
-            'database' => env('PGDATABASE', 'railway'),
-            'username' => env('PGUSER', 'postgres'),
-            'password' => env('PGPASSWORD', ''),
+            'host' => env('DB_HOST', env('PGHOST', '127.0.0.1')),
+            'port' => env('DB_PORT', env('PGPORT', '5432')),
+            'database' => env('DB_DATABASE', env('PGDATABASE', 'railway')),
+            'username' => env('DB_USERNAME', env('PGUSER', 'postgres')),
+            'password' => env('DB_PASSWORD', env('PGPASSWORD', '')),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
