@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: greengo-api
+    env: php
+    buildCommand: "./render-build.sh"
+    startCommand: "./render-start.sh"
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_DRIVER
+        value: database
+
+databases:
+  - name: greengo-db
+    plan: free
