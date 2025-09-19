@@ -13,9 +13,15 @@ APP_ENV = "production"
 APP_DEBUG = "false"
 LOG_CHANNEL = "stderr"
 SANCTUM_STATEFUL_DOMAINS = "greengodelivery-ge-main.vercel.app,localhost,localhost:3000"
-# Direct PostgreSQL variables (Railway provides these automatically)
+# PostgreSQL variables - Railway automatically provides these when PostgreSQL service is connected
 PGHOST = "${{Postgres.PGHOST}}"
 PGPORT = "${{Postgres.PGPORT}}"
 PGDATABASE = "${{Postgres.PGDATABASE}}"
 PGUSER = "${{Postgres.PGUSER}}"
 PGPASSWORD = "${{Postgres.PGPASSWORD}}"
+# Also set DB_* variables as fallback
+DB_HOST = "${{Postgres.PGHOST}}"
+DB_PORT = "${{Postgres.PGPORT}}"
+DB_DATABASE = "${{Postgres.PGDATABASE}}"
+DB_USERNAME = "${{Postgres.PGUSER}}"
+DB_PASSWORD = "${{Postgres.PGPASSWORD}}"
