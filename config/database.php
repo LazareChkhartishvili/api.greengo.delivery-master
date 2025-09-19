@@ -81,17 +81,20 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            // Explicitly disable DATABASE_URL parsing by not including 'url' key
-            'host' => env('DB_HOST', env('PGHOST', '127.0.0.1')),
-            'port' => (int) env('DB_PORT', env('PGPORT', '5432')),
-            'database' => env('DB_DATABASE', env('PGDATABASE', 'laravel')),
-            'username' => env('DB_USERNAME', env('PGUSER', 'root')),
-            'password' => env('DB_PASSWORD', env('PGPASSWORD', '')),
+            'host' => env('PGHOST', '127.0.0.1'),
+            'port' => env('PGPORT', '5432'),
+            'database' => env('PGDATABASE', 'railway'),
+            'username' => env('PGUSER', 'postgres'),
+            'password' => env('PGPASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
+            'options' => [
+                \PDO::ATTR_EMULATE_PREPARES => false,
+                \PDO::ATTR_STRINGIFY_FETCHES => false,
+            ],
         ],
 
         'sqlsrv' => [
