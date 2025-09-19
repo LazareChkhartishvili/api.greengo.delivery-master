@@ -2,10 +2,19 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "php artisan migrate --force && php -S 0.0.0.0:$PORT -t public/"
+startCommand = "php artisan config:cache && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
 
 [variables]
 PORT = "8080"
 DB_CONNECTION = "pgsql"
+APP_ENV = "production"
+APP_DEBUG = "false"
+LOG_CHANNEL = "stderr"
+# Use individual DB parameters instead of DATABASE_URL to avoid parsing issues
+DB_HOST = "${{Postgres.PGHOST}}"
+DB_PORT = "${{Postgres.PGPORT}}"
+DB_DATABASE = "${{Postgres.PGDATABASE}}"
+DB_USERNAME = "${{Postgres.PGUSER}}"
+DB_PASSWORD = "${{Postgres.PGPASSWORD}}"

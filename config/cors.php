@@ -23,6 +23,7 @@ return [
       'http://localhost:3000',
       'https://greengodelivery-ge-main.vercel.app',
       'https://*.vercel.app',
+      'https://*.railway.app',
     ],
 
     'allowed_origins_patterns' => [],
