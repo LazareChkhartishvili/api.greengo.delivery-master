@@ -12,6 +12,7 @@ DB_CONNECTION = "pgsql"
 APP_ENV = "production"
 APP_DEBUG = "false"
 LOG_CHANNEL = "stderr"
+SANCTUM_STATEFUL_DOMAINS = "greengodelivery-ge-main.vercel.app,localhost,localhost:3000"
 # Use individual DB parameters instead of DATABASE_URL to avoid parsing issues
 DB_HOST = "${{Postgres.PGHOST}}"
 DB_PORT = "${{Postgres.PGPORT}}"

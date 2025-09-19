@@ -24,6 +24,7 @@ return [
       'https://greengodelivery-ge-main.vercel.app',
       'https://*.vercel.app',
       'https://*.railway.app',
+      'https://apigreengodelivery-master-production.up.railway.app',
     ],
 
     'allowed_origins_patterns' => [],
