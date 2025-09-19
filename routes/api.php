@@ -22,7 +22,7 @@ use App\Http\Controllers\API\AdminSettingRoleController;
 
 
 
-    Route::prefix('web')->middleware('cors')->group(function () {
+    Route::prefix('web')->group(function () {
 
         Route::prefix('home')->group(function () {
             Route::get('/category-list', [WebHomeController::class, 'categoryList']);
