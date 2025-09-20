@@ -38,7 +38,7 @@ class AdminCompanyController extends StafiloController
     {
         $validator = Validator::make($request->all(), [
             'name_ka' => 'required',
-            'Company_id' => 'required',
+            'category_id' => 'required',
             'city_id' => 'required',
         ]);
 
@@ -52,7 +52,7 @@ class AdminCompanyController extends StafiloController
         $Company->name_en                       = $request->name_en;
         $Company->description_ka                = $request->description_ka;
         $Company->description_en                = $request->description_en;
-        $Company->Company_id                   = $request->Company_id;
+        $Company->category_id                   = $request->category_id;
         $Company->city_id                       = $request->city_id;
         $Company->address_ka                    = $request->address_ka;
         $Company->address_en                    = $request->address_en;
@@ -124,7 +124,7 @@ class AdminCompanyController extends StafiloController
 
         $validator = Validator::make($request->all(), [
             'name_ka' => 'required',
-            'Company_id' => 'required',
+            'category_id' => 'required',
             'city_id' => 'required',
         ]);
 
@@ -136,7 +136,7 @@ class AdminCompanyController extends StafiloController
         $Company->name_en                       = $request->name_en;
         $Company->description_ka                = $request->description_ka;
         $Company->description_en                = $request->description_en;
-        $Company->Company_id                   = $request->Company_id;
+        $Company->category_id                   = $request->category_id;
         $Company->city_id                       = $request->city_id;
         $Company->address_ka                    = $request->address_ka;
         $Company->address_en                    = $request->address_en;
