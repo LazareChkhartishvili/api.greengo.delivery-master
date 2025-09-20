@@ -53,7 +53,7 @@ class UserRoleSeeder extends Seeder
 
         UserRole::create(
             [
-                "id"             =>    "5",
+                "id"             =>    "6",
                 "name"           =>    "მომხმარებელი",
                 "code"           =>    "Member",
                 "color"          =>    "",
