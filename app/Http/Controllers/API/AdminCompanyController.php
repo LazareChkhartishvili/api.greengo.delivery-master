@@ -155,7 +155,7 @@ class AdminCompanyController extends StafiloController
             $path=public_path('/upload/Company/');
             $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
             $image->move($path,$name);
-            $Company->picture=('/upload/Company/'.$name);
+            $Company->picture=(env('APP_URL').'/upload/Company/'.$name);
         }
 
         $Company->save();
