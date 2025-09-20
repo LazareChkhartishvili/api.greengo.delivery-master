@@ -70,9 +70,9 @@ class AdminProductController extends StafiloController
              $path=public_path('/upload/Product/');
              $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
              $image->move($path,$name);
-             $Product->picture=('/upload/Product/'.$name);
+             $Product->picture=(env('APP_URL').'/upload/Product/'.$name);
          }else{
-             $Product->picture                  ='/no-picture.png';
+             $Product->picture                  =(env('APP_URL').'/no-picture.png');
          }
          // სურათი
 
@@ -145,7 +145,7 @@ class AdminProductController extends StafiloController
              $path=public_path('/upload/Product/');
              $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
              $image->move($path,$name);
-             $Product->picture=('/upload/Product/'.$name);
+             $Product->picture=(env('APP_URL').'/upload/Product/'.$name);
          }
 
         $Product->save();

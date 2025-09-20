@@ -64,9 +64,9 @@ class AdminProductCategoryController extends StafiloController
             $path=public_path('/upload/ProductCategory/');
             $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
             $image->move($path,$name);
-            $ProductCategory->picture=('/upload/ProductCategory/'.$name);
+            $ProductCategory->picture=(env('APP_URL').'/upload/ProductCategory/'.$name);
         }else{
-            $ProductCategory->picture                  ='/no-picture.png';
+            $ProductCategory->picture                  =(env('APP_URL').'/no-picture.png');
         }
         // სურათი
 
@@ -134,7 +134,7 @@ class AdminProductCategoryController extends StafiloController
             $path=public_path('/upload/ProductCategory/');
             $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
             $image->move($path,$name);
-            $ProductCategory->picture=('/upload/ProductCategory/'.$name);
+            $ProductCategory->picture=(env('APP_URL').'/upload/ProductCategory/'.$name);
         }
 
         $ProductCategory->save();
