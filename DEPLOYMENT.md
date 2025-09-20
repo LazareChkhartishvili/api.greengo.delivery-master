@@ -95,3 +95,6 @@ Test admin login on Railway:
 2. Navigate to admin login
 3. Use any of the admin accounts listed above
 4. Should work without 404 errors now
+
+## 🧪 Deploy Test - 2025-09-20
+Testing if Railway auto-seeding is fixed - only admin users should be preserved, deleted data should NOT return.
