@@ -66,7 +66,7 @@ class AdminProductCategoryController extends StafiloController
             $image->move($path,$name);
             $ProductCategory->picture=(env('APP_URL').'/upload/ProductCategory/'.$name);
         }else{
-            $ProductCategory->picture                  =(env('APP_URL').'/no-picture.png');
+            $ProductCategory->picture                  ='https://via.placeholder.com/300x200/cccccc/666666?text=No+Image';
         }
         // სურათი
 

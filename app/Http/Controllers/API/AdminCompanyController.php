@@ -75,7 +75,7 @@ class AdminCompanyController extends StafiloController
             $image->move($path,$name);
             $Company->picture=(env('APP_URL').'/upload/Company/'.$name);
         }else{
-            $Company->picture                  =(env('APP_URL').'/no-picture.png');
+            $Company->picture                  ='https://via.placeholder.com/300x200/cccccc/666666?text=No+Image';
         }
         // სურათი
 
