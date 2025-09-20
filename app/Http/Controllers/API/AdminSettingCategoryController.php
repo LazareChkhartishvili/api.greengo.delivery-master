@@ -61,9 +61,9 @@ class AdminSettingCategoryController extends StafiloController
             $path=public_path('/upload/Category/');
             $name=(md5(microtime()).'.'.$image->getClientOriginalExtension());
             $image->move($path,$name);
-            $Category->picture=('/upload/Category/'.$name);
+            $Category->picture=(env('APP_URL').'/upload/Category/'.$name);
         }else{
-            $Category->picture                  ='/no-picture.png';
+            $Category->picture                  =(env('APP_URL').'/no-picture.png');
         }
         // სურათი
 
